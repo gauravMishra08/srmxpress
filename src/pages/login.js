@@ -12,7 +12,6 @@ function Login() {
             <div className="google-btn-content">
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google" className="google-logo" />
             </div>
-            Continue with Google
           </button>
           <div className="separator">
             <span>or continue with SRM email</span>
