@@ -4,7 +4,7 @@ body {
     background-color: #1d1f22;
     color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center; 
     height: 100vh;
   }
@@ -73,9 +73,11 @@ body {
     margin-bottom: 16px;
   }
   
-  .login-input-field {
-    width: 93%;
+  .input-field {
+    width: 4%;
+    text-align: center;
     padding: 12px;
+    margin-right: 10px;
     border-radius: 4px;
     border: 1px solid #f6a622;
     background-color: #2a2d32;
@@ -95,15 +97,22 @@ body {
   }
   
   .checkbox {
-    margin-right: 8px;
+    margin-right: 5px;
   }
   
-  .forgot-password {
-    color: #f6a622;
+  .accept-terms {
     text-decoration: none;
+    text-align: left;
   }
   
-  .login-btn {
+  
+  .login-to-account {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
     background-color: #f6a622;
     border: none;
     color: white;
@@ -114,13 +123,7 @@ body {
     font-size: 16px;
   }
   
-  .create-account {
-    text-align: left;
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  
-  .create-account-link {
+  .terms-and-conditions {
     color: #f6a622;
     text-decoration: none;
   }

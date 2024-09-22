@@ -6,11 +6,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */ /* Black background */
-    color: white; /* White text color */
-    text-align: center; /* Center text alignment */
+    height: 100vh; 
+    color: white; 
+    text-align: center; 
   }
   
   .landing-container h1 {
-    font-size: 3em; /* Large font size for the heading */
+    font-size: 3em; 
   }

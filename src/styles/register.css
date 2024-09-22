@@ -4,8 +4,8 @@ body {
     background-color: #1d1f22;
     color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center; 
+    justify-content: center; 
+    align-items: center;
     height: 100vh;
   }
   
@@ -73,7 +73,7 @@ body {
     margin-bottom: 16px;
   }
   
-  .login-input-field {
+  .register-input-field {
     width: 93%;
     padding: 12px;
     border-radius: 4px;
@@ -95,32 +95,22 @@ body {
   }
   
   .checkbox {
-    margin-right: 8px;
+    margin-right: 5px;
   }
   
-  .forgot-password {
-    color: #f6a622;
+  .accept-terms {
     text-decoration: none;
-  }
-  
-  .login-btn {
-    background-color: #f6a622;
-    border: none;
-    color: white;
-    padding: 16px;
-    border-radius: 4px;
-    width: 100%;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .create-account {
     text-align: left;
+  }
+  
+  
+  .login-to-account {
+    text-align: center;
     margin-top: 20px;
     font-size: 14px;
   }
   
-  .create-account-link {
+  .terms-and-conditions {
     color: #f6a622;
     text-decoration: none;
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/login.css'; // Ensure you have the necessary styles in index.css
+import '../styles/login.css'; 
 
 function Login() {
   return (
@@ -18,10 +18,10 @@ function Login() {
           </div>
           <form>
             <div className="input-box">
-              <input type="text" placeholder="SRM Email" className="input-field" />
+              <input type="text" placeholder="SRM Email" className="login-input-field" />
             </div>
             <div className="input-box">
-              <input type="password" placeholder="Password" className="input-field" />
+              <input type="password" placeholder="Password" className="login-input-field" />
             </div>
             <div className="options">
               <label className="remember-me">
