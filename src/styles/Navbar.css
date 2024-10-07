@@ -1,0 +1,67 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 2rem;
+  width: 100%; /* Ensure the navbar stretches the full width */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 1rem;
+  height: 30px auto;
+  width: 30px;
+}
+
+.navbar-brand img {
+  height: 80px; /* Adjust the height as needed */
+}
+
+.navbar-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+  margin: 0 auto; /* Center the menu options */
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links li a:hover {
+  text-decoration: underline;
+}
+
+.navbar-icons {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center; 
+}
+
+.icon {
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover; 
+}

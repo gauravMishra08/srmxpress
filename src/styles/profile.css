@@ -1,0 +1,68 @@
+body {
+    font-family: roboto;
+    background-color: #1b1b1b;
+    color: white;
+}
+.profile-section {
+    padding: 20px;
+    text-align: center;
+    margin-top: -70px;
+    transform: scale(1.2);
+}
+
+h1 {
+    color: #FBA403;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #f0c342;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.pfp {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.pemail-display h2 {
+    font-size: 24px;
+    width: 80%;
+    color: #FBA403;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    margin: 50px;
+    margin-right: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: #282828;
+    border-radius: 5px;
+}
+
+.name {
+    color: white;
+}
+
+.change-email {
+    color: #FBA403;
+    font-size: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+

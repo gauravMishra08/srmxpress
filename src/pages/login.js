@@ -1,9 +1,18 @@
 import React from 'react';
 import '../styles/login.css'; 
+import Navbar from '../components/Navbar';
+import bgvideo from '../images/bgvideo.mp4';
 
 function Login() {
   return (
     <>
+    <Navbar />
+    <div className="video-background">
+        <video autoPlay loop muted className="bg-video">
+          <source src={bgvideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="container">
         <div className="login-box">
           <h2>Login to your Account</h2>
@@ -28,12 +37,12 @@ function Login() {
                 <input type="checkbox" className="checkbox" />
                 Remember me
               </label>
-              <a href="#" className="forgot-password">Forgot Password?</a>
+              <a href="http://localhost:3000/otp" className="forgot-password">Forgot Password?</a>
             </div>
             <button className="login-btn" type="submit">LOG IN</button>
           </form>
           <p className="create-account">
-            Don't have an account? <a href="#" className="create-account-link">Create an account</a>
+            Don't have an account? <a href="http://localhost:3000/register" className="create-account-link">Create an account</a>
           </p>
         </div>
         <div className="image-box">

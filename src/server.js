@@ -24,7 +24,7 @@ db.connect((err) => {
 
 
 app.post('/register', async (req, res) => {
-  const { name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
 
   const checkEmail = 'SELECT * FROM users WHERE email = ?';
@@ -41,8 +41,8 @@ app.post('/register', async (req, res) => {
 
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
-      db.query(sql, [name, email, hashedPassword], (err, result) => {
+      const sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
+      db.query(sql, [username, email, hashedPassword], (err, result) => {
         if (err) {
           console.log(err);
           return res.status(500).json({ message: 'Server error' });
@@ -60,3 +60,4 @@ app.post('/register', async (req, res) => {
 app.listen(5000, () => {
   console.log('Server running on http://localhost:5000');
 });
+

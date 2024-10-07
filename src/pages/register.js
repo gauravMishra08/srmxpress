@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/register.css';
+import Navbar from '../components/Navbar';
+import bgvideo from '../images/bgvideo.mp4';
 
 function Register() {
   const [username, setUsername] = useState('');
@@ -19,7 +21,7 @@ function Register() {
 
     try {
       const response = await axios.post('http://localhost:5000/register', {
-        name: username,
+        username: username,
         email,
         password,
       });
@@ -30,9 +32,16 @@ function Register() {
       setError('Registration failed. Please try again.');
     }
   };
-
+  
   return (
     <>
+    <Navbar />
+    <div className="video-background">
+        <video autoPlay loop muted className="bg-video">
+          <source src={bgvideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="container">
         <div className="login-box">
           <h2>Create your Account</h2>

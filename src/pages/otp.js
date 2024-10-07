@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/otp.css';
+import Navbar from '../components/Navbar';
+import bgvideo from '../images/bgvideo.mp4';
 
 function Login() {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
@@ -38,6 +40,13 @@ function Login() {
 
   return (
     <>
+    <Navbar />
+    <div className="video-background">
+        <video autoPlay loop muted className="bg-video">
+          <source src={bgvideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="container">
         <div className="login-box">
           <h2>Enter OTP</h2>
