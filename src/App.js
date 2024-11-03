@@ -7,6 +7,7 @@ import Landing from './pages/landing';
 import Contact from './pages/contact';
 import Profile from './pages/profile';
 import NewPass from './pages/newpass';
+import Book from './pages/book';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} /> 
         <Route path="/profile" element={<Profile />} />
         <Route path="/newpass" element={<NewPass />} />
+        <Route path="/book" element={<Book />} />
         {/* Add other routes here */}
       </Routes>
     </Router>
