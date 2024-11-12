@@ -1,40 +1,62 @@
-import React from 'react';
-import '../styles/booked.css'; // Adjust the path as necessary
+import React, { useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import { Link } from 'react-router-dom'
+import '../styles/booked.css';
+import QR from '../images/qrcode.jpg'; // Import the image
 
 const Booked = () => {
+  const location = useLocation();
+  const { pickup, drop, distance, fare } = location.state || {};
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
-        <Navbar />  
-      <title>SRMXpress - Nearby Drivers</title>
-      <link rel="stylesheet" href="styles.css" />
+      <Navbar />
       <div className="container">
         <div className="left-section">
           <div className="driver-box">
             <h1>Looking for nearby drivers</h1>
-            <div className="icon">
-            </div>
-
             <div className="ride-details">
-              <p><strong>SRM Hotel gate</strong></p>
-              <p>SRM - Main block</p>
-              <p>SRM Hotel gate</p>
-              <p><strong>Abode Valley</strong></p>
-              <p>S 304, Kakkan St, Potheri, Chennai,</p>
-              <p>Kattankulathur, Tamil Nadu</p>
-
-              <button className="edit-button">EDIT OR ADD STOPS</button>
-
+              <p><strong>Pickup:</strong> {pickup || "N/A"}</p>
+              <p><strong>Drop:</strong> {drop || "N/A"}</p>
+              <p><strong>Distance:</strong> {distance ? `${distance.toFixed(2)} km` : "Calculating..."}</p>
               <div className="fare">
-                <p>RS 69.14</p>
-                <p>Cash/Online</p>
+                <p><strong>Fare:</strong> ₹{fare ? fare.toFixed(2) : "Calculating..."}</p>
               </div>
-              <Link to="/" className='cancel-button'>Cancel</Link>
+              <Link to="/" className="cancel-button">Cancel</Link>
+              <button onClick={openModal} className="pay-now-button">Pay Now</button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <button onClick={closeModal} className="close-modal">X</button>
+            <div className="modal-content">
+              {/* QR Code Image */}
+              <img src={QR} alt="Payment" className="modal-image" />
+              {/* Pickup, Drop, and Fare Details */}
+              <div className="ride-details-modal">
+                <p><strong>Pickup Location:</strong> {pickup || "N/A"}</p>
+                <p><strong>Drop Location:</strong> {drop || "N/A"}</p>
+                <p><strong>Fare:</strong> ₹{fare ? fare.toFixed(2) : "Calculating..."}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

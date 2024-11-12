@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/profile.css';
+import '../styles/profile.css'; // Adjust the path as necessary
 import Navbar from '../components/Navbar';
-import logo from '../../src/logo192.png';
+import logo from '../../src/logo192.png'
 
 const Profile = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const storedUsername = localStorage.getItem('username');
-    const storedEmail = localStorage.getItem('email');
-
-    if (storedUsername && storedEmail) {
-      setUsername(storedUsername);
-      setEmail(storedEmail);
-    } else {
-      // Optionally handle case where data is not found
-    }
+    const fetchUserData = async () => {
+      const response = await fetch('/api/user');
+      const data = await response.json();
+      setUser(data);
+    };
+    fetchUserData();
   }, []);
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -27,14 +27,14 @@ const Profile = () => {
         <div className="profile-container">
           <div className="profile-info">
             <div>
-              <img src={logo} alt="Profile" className="pfp" />
+              <img src={user.profilePicture || logo} alt="Profile" className="pfp" />
             </div>
-            <h2 className="name">{username || 'Loading...'}</h2>
-            <h2 className="name">9315715875</h2>
+            <h2 className="name">{user.name}</h2>
+            <h2 className="name">{user.phone}</h2>
             <br />
             <h3>SRM Email</h3>
             <div className="pemail-display">
-              <h2>{email || 'Loading...'}</h2>
+              <h2>{user.email}</h2>
               <h4>Forgot password?</h4>
               <a href="/otp" className="change-email">Reset</a>
             </div>
