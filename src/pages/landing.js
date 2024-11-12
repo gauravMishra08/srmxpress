@@ -11,7 +11,7 @@ import home7 from '../images/home7.png'; // Import the image
 import facebook from '../images/Facebook.png'; // Import the image
 import instagram from '../images/Instagram.png'; // Import the image
 import twitter from '../images/Twitter.png'; // Import the image
-
+import { Link } from 'react-router-dom';
 const Landing = () => {
   return (
     <>
@@ -68,8 +68,8 @@ const Landing = () => {
       <section className="become-driver">
         <h2>Become a Driver</h2>
         <p>Sign up as a driver and become part of the SRMXpress community. Drive on your schedule and earn as you support campus commutes.</p>
-        <button className="register-btn">Register Now</button>
-      </section>
+        <Link to="/register" className="register-btn">Register Now</Link>      
+        </section>
 
       <section className="how-it-works">
         <h2>How does it work?</h2>

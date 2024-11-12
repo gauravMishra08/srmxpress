@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../styles/register.css';
 import Navbar from '../components/Navbar';
 import bgvideo from '../images/bgvideo.mp4';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [username, setUsername] = useState('');
@@ -10,6 +11,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,22 +23,28 @@ function Register() {
 
     try {
       const response = await axios.post('http://localhost:5000/register', {
-        username: username,
+        username,
         email,
         password,
       });
+
+      // Assuming the response contains a token on successful registration
+      localStorage.setItem('token', response.data.token);
       console.log('Registration successful:', response.data);
-      setError(''); 
+      setError('');
+
+      // Redirect to profile page
+      navigate('/login');
     } catch (error) {
       console.error('Error registering user:', error);
       setError('Registration failed. Please try again.');
     }
   };
-  
+
   return (
     <>
-    <Navbar />
-    <div className="video-background">
+      <Navbar />
+      <div className="video-background">
         <video autoPlay loop muted className="bg-video">
           <source src={bgvideo} type="video/mp4" />
           Your browser does not support the video tag.
