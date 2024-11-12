@@ -11,6 +11,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // New state for success message
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -30,11 +31,15 @@ function Register() {
 
       // Assuming the response contains a token on successful registration
       localStorage.setItem('token', response.data.token);
-      console.log('Registration successful:', response.data);
+      
+      // Set the success message
+      setSuccessMessage('User registered successfully');
       setError('');
 
-      // Redirect to profile page
-      navigate('/login');
+      // Delay the redirect by 2 seconds (2000 ms)
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000);
     } catch (error) {
       console.error('Error registering user:', error);
       setError('Registration failed. Please try again.');
@@ -96,6 +101,7 @@ function Register() {
               />
             </div>
             {error && <p className="error-message">{error}</p>}
+            {successMessage && <p className="success-message">{successMessage}</p>} {/* Success message */}
             <div className="options">
               <label className="accept-terms">
                 <input type="checkbox" className="checkbox" required />
