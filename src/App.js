@@ -7,6 +7,7 @@ import Landing from './pages/landing';
 import Contact from './pages/contact';
 import Profile from './pages/profile';
 import NewPass from './pages/newpass';
+import Booked from './pages/booked';
 import Book from './pages/book';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} /> 
         <Route path="/profile" element={<Profile />} />
         <Route path="/newpass" element={<NewPass />} />
+        <Route path="/booked" element={<Booked />} />
         <Route path="/book" element={<Book />} />
         {/* Add other routes here */}
       </Routes>
